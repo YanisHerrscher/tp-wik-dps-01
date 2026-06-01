@@ -14,8 +14,6 @@ def api():
 def stats():
     data.increment()
     now = dt.datetime.now() - date
-    # 0:00:00.000032
-    # 3.2e-05
     return {"request" : data.get_request(), "name" : argv[2], "date" : str(now.total_seconds())}
 
 
