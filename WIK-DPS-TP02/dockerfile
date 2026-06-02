@@ -1,0 +1,13 @@
+FROM python:3.11.15-trixie
+RUN pip install flask
+
+WORKDIR /app
+
+RUN adduser wanderer
+USER wanderer
+
+COPY --chown=wanderer:wanderer ./python/Lib/func.py ./Lib/
+COPY --chown=wanderer:wanderer ./main.py .
+
+ENTRYPOINT [ "python" ]
+CMD [ "main.py", "80", "API" ]
