@@ -1,5 +1,0 @@
-FROM scratch
-
-COPY ./ a
-ENTRYPOINT a
-CMD ["/hello"]
